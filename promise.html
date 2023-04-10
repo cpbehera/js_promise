@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>promises</title>
+    </head>
+    <body>
+        <p>Random number between 1 to 10 is : <span id="random"></span></p>
+        <p>Error : <span id="error"></span></p>
+
+
+
+        <script>
+
+            // promise resolved
+
+            let random = document.getElementById('random');
+            let error = document.getElementById('error');
+            
+        const promise1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                 resolve((Math.random() * 100 / 10).toFixed());
+            }, 1000);
+        });
+
+        promise1.then((res)=>{
+            console.log(res);
+            random.innerText = res;
+        });
+
+        // reject case
+
+        const promise2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                 resolve((Mat.random() * 100 / 10).toFixed());
+            }, 1000);
+        });
+
+        promise2.then((res2)=>{
+            console.log(res2);
+        }).catch((error)=>{
+            console.log(error);
+        });
+    </script>
+    </body>
+</html>
